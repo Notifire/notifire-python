@@ -1,0 +1,8 @@
+aiohttp
+gevent
+mock
+pytest
+pytest-asyncio
+pytest-mock
+raven
+requests

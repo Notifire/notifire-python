@@ -1,0 +1,24 @@
+language: python
+
+cache:
+  - pip
+
+matrix:
+  include:
+    - python: 3.6
+      script: tox -e py3.6
+    - python: 3.7
+      script: tox -e py3.7
+    - python: 3.8
+      script: tox -e py3.8
+    - python: 3.9
+      script:
+        - tox -e py3.9
+        - tox -e pylint
+        - tox -e flake8
+
+install:
+  - pip install tox
+
+script:
+  - tox

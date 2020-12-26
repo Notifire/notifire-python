@@ -1,0 +1,22 @@
+[MASTER]
+# jobs=0 means 'use all CPUs'
+jobs=0
+
+[MESSAGES CONTROL]
+disable =
+  arguments-differ,
+  attribute-defined-outside-init,
+  broad-except,
+  fixme,
+  import-outside-toplevel,
+  invalid-name,
+  missing-docstring,
+  multiple-statements,
+  protected-access,
+  redefined-outer-name,
+  super-init-not-called,
+  too-few-public-methods,
+  too-many-arguments,
+  too-many-branches,
+  too-many-instance-attributes,
+  unused-argument,
