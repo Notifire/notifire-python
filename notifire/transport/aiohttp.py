@@ -71,8 +71,8 @@ class AioHTTPTransportBase(AsyncTransport, HTTPTransport):
             )
 
             code = resp.status
-            if code != 200:
-                msg = resp.headers.get('x-notifire-error')
+            if not 200 <= code < 300:
+                msg = await resp.text()
                 if code == 429:
                     try:
                         retry_after = resp.headers.get('retry-after')

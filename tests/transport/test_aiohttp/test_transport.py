@@ -80,7 +80,7 @@ async def test_rate_limit(fake_server, notifire_client, wait):
 
         assert server.hits[429] == 1
 
-    msg = 'Notifire api responded with an error: RateLimited(None)'
+    msg = 'Notifire api responded with an error: RateLimited()'
     assert log.msgs[0] == msg
 
 
@@ -97,7 +97,7 @@ async def test_status_500(fake_server, notifire_client, wait):
 
         assert server.hits[500] == 1
 
-    msg = 'Notifire api responded with an error: APIError(None)'
+    msg = 'Notifire api responded with an error: APIError()'
     assert log.msgs[0] == msg
 
 
