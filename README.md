@@ -1,6 +1,6 @@
 # Notifire - Python client for [Notifire](https://notifire.dvdblk.com)
 
-[![Build Status](https://travis-ci.org/Notifire/Notifire-python.svg?branch=master)](https://travis-ci.org/github/Notifire/Notifire-python)
+[![Build Status](https://travis-ci.org/Notifire/notifire-python.svg?branch=master)](https://travis-ci.org/github/Notifire/notifire-python)
 [![PyPi page link -- version](https://img.shields.io/pypi/v/notifire.svg)](https://pypi.org/project/notifire)
 
 Notifire-Python is Python client used for sending Apple push notifications from your code to your iOS device with
@@ -28,24 +28,31 @@ client.send_notification('Hello from Python')
 
 ### Notification
 The notification consists of
- - body (required) - title of the iOS notification pop-up
- - level - one of `info`/`error`/`warning` to filter the notification
- - text - additional text of the notification shown in notification tab
- - url - url displayed in the notification
+ - *body* (required) - title of the iOS notification pop-up
+ - *level* - one of ***info***/***error***/***warning*** to filter the notification
+ - *text* - additional text of the notification shown in notification tab
+ - *url* - url displayed in the notification
 
-These parameters are accepted by`send_notification` method.
+These parameters are accepted by ***send_notification*** method.
 Notifications are aggregated under a *service* which you create in the Notifire iOS application.<br/>
 Service is a representation of your code/script/application from which you send these notifications.
 
 ### Transports
 A transport is the mechanism through which Notifire sends the HTTP request to the Notifire server.
 There are 6 types of transports implemented:
- - AioHttpTransport - should be used in asyncio based environments
- - GeventedHTTPTransport - should be used in gevent based environments
- - HTTPTransport - synchronous blocking transport, can be used in any environment
- - RequestsHTTPTransport - synchronous blocking transport using `requests` library, can be used in any environment
- - ThreadedHTTPTransport (Default) - spawns a thread (async worker) that is processing messages
- - ThreadedRequestsHTTPTransport - spawns a thread (async worker) that is using `requests` library for processing messages
+ - *AioHTTPTransport* - sends concurrent message via [aiohttp](https://docs.aiohttp.org/en/stable) library, should be used in asyncio based environments
+ - *GeventedHTTPTransport* - sends non-blocking message via [gevent](http://www.gevent.org) library, should be used in gevent based environments
+ - *HTTPTransport* - synchronous blocking transport, can be used in any environment
+ - *RequestsHTTPTransport* - synchronous blocking transport using [requests](https://requests.readthedocs.io/en/master) library, can be used in any environment
+ - *ThreadedHTTPTransport* (Default) - spawns a thread (async worker) that is processing messages
+ - *ThreadedRequestsHTTPTransport* - spawns a thread (async worker) that is using [requests](https://requests.readthedocs.io/en/master) library for processing messages
+
+To use **aiohhtp**/**gevent**/**requests** transport, install it's appropriate library:
+```shell script
+pip install aiohttp
+pip install gevent
+pip install requests
+```
 
 To use your desired transport, simply import and pass it to the Client class.
 ```python
