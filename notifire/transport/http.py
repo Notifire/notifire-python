@@ -35,7 +35,7 @@ class HTTPTransport(Transport):
                 ca_certs=self.ca_certs,
             )
         except urllib.request.HTTPError as exc:
-            msg = exc.headers.get('x-notifire-error')
+            msg = exc.read().decode()
             code = exc.getcode()
             if code == 429:  # pylint: disable=R1720
                 try:
