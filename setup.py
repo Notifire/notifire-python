@@ -16,14 +16,14 @@ tests_require = [
 
 setup(
     name='notifire',
-    version='0.1.0',
-    url='https://github.com/Notifire/Notifire-python',
+    version='0.1.1',
+    url='https://github.com/Notifire/notifire-python',
     author='Notifire team',
     author_email='notifire@memonil.com',
-    description="Python client for Notifire (https://notifire.dvdblk.com)",
+    description='Python client for Notifire (https://notifire.dvdblk.com)',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
-    packages=find_packages(exclude=("tests", "tests.*")),
+    packages=find_packages(exclude=('tests', 'tests.*')),
     license='BSD',
     install_requires=install_requires,
     extras_require={
