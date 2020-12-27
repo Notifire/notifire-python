@@ -18,7 +18,7 @@ class TestClient:
             'Content-Type': 'application/json',
             'Content-Encoding': 'gzip',
             'X-Notifire-Auth': (
-                'Notifire notifire_api_key=service_api_key, '
+                'Notifire notifire_service_api_key=service_api_key, '
                 'notifire_timestamp=123456.789, '
                 'notifire_client={}'.format('notifire-python')
             )
@@ -44,7 +44,7 @@ class TestClient:
                 'Content-Type': 'application/json',
                 'Content-Encoding': 'gzip',
                 'X-Notifire-Auth': (
-                    'Notifire notifire_api_key=service_api_key, '
+                    'Notifire notifire_service_api_key=service_api_key, '
                     'notifire_timestamp=123456.789, '
                     'notifire_client={}'.format('notifire-python')
                 )
@@ -75,7 +75,7 @@ class TestClient:
                 'Content-Type': 'application/json',
                 'Content-Encoding': 'gzip',
                 'X-Notifire-Auth': (
-                    'Notifire notifire_api_key=service_api_key, '
+                    'Notifire notifire_service_api_key=service_api_key, '
                     'notifire_timestamp=123456.789, '
                     'notifire_client={}'.format('notifire-python')
                 )

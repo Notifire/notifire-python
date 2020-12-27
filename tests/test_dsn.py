@@ -23,7 +23,8 @@ class TestDsn:
         with mock.patch('notifire.dsn.datetime') as time:
             time.utcnow().__sub__().total_seconds.return_value = '123456.789'
             assert self.dsn.auth_header() == (
-                'Notifire notifire_api_key={0}, notifire_timestamp={1}, '
+                'Notifire notifire_service_api_key={0}, '
+                'notifire_timestamp={1}, '
                 'notifire_client={2}'
                 .format(self.service_api_key, '123456.789', constants.CLIENT)
             )

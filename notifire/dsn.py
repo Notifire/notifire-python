@@ -18,7 +18,7 @@ class Dsn:
 
     def auth_header(self):
         header = [
-            ('notifire_api_key', self.service_api_key),
+            ('notifire_service_api_key', self.service_api_key),
             ('notifire_timestamp', (datetime.utcnow() - EPOCH)
              .total_seconds()),
             ('notifire_client', constants.CLIENT)
